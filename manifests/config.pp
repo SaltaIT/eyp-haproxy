@@ -1,5 +1,8 @@
 class haproxy::config inherits haproxy {
 
+  # TODO: load multiple configuration files using the -f flag, for example:
+  #       haproxy -f conf/http-defaults -f conf/http-listeners ...
+
   file { '/etc/haproxy/haproxy.cfg':
     ensure  => 'present',
     owner   => 'root',
