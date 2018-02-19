@@ -5,7 +5,7 @@ define haproxy::balancer(
                           $balance_mode  = 'roundrobin',
                         ) {
   include ::haproxy
-  
+
   concat::fragment{ "balancer: ${balancer_name}":
     target  => '/etc/haproxy/haproxy.cfg',
     order   => "99-${balancer_name}-0",
