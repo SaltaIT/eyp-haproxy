@@ -4,10 +4,10 @@ class haproxy::config inherits haproxy {
   #       haproxy -f conf/http-defaults -f conf/http-listeners ...
 
   concat { '/etc/haproxy/haproxy.cfg':
-    ensure  => 'present',
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0644',
+    ensure => 'present',
+    owner  => 'root',
+    group  => 'root',
+    mode   => '0644',
   }
 
   concat::fragment { 'defaults haproxy':
