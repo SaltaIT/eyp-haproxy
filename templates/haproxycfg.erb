@@ -1,3 +1,4 @@
+# puppet managed file
 global
 	log /dev/log	local0
 	log /dev/log	local1 notice
@@ -21,8 +22,8 @@ global
 	# Default ciphers to use on SSL-enabled listening sockets.
 	# For more information, see ciphers(1SSL). This list is from:
 	#  https://hynek.me/articles/hardening-your-web-servers-ssl-ciphers/
-	ssl-default-bind-ciphers ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES:RSA+AESGCM:RSA+AES:RSA+3DES:!aNULL:!MD5:!DSS
-	ssl-default-bind-options no-sslv3
+	ssl-default-bind-ciphers <%= @ssl_ciphers %>
+	ssl-default-bind-options <%= @ssl_options %>
 
 defaults
 	log	global
@@ -39,3 +40,4 @@ defaults
 	errorfile 502 /etc/haproxy/errors/502.http
 	errorfile 503 /etc/haproxy/errors/503.http
 	errorfile 504 /etc/haproxy/errors/504.http
+	stats enable

@@ -11,6 +11,8 @@ class haproxy(
                             $user                  = 'haproxy',
                             $group                 = 'haproxy',
                             $daemon                = true,
+                            $ssl_options           = 'no-sslv3',
+                            $ssl_ciphers           = 'ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES:RSA+AESGCM:RSA+AES:RSA+3DES:!aNULL:!MD5:!DSS',
                           ) inherits haproxy::params{
 
   validate_re($package_ensure, [ '^present$', '^installed$', '^absent$', '^purged$', '^held$', '^latest$' ], 'Not a supported package_ensure: present/absent/purged/held/latest')

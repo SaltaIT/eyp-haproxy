@@ -3,11 +3,16 @@ class haproxy::config inherits haproxy {
   # TODO: load multiple configuration files using the -f flag, for example:
   #       haproxy -f conf/http-defaults -f conf/http-listeners ...
 
-  file { '/etc/haproxy/haproxy.cfg':
+  concat { '/etc/haproxy/haproxy.cfg':
     ensure  => 'present',
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
+  }
+
+  concat::fragment { 'defaults haproxy':
+    target  => '/etc/haproxy/haproxy.cfg',
+    order   => '00',
     content => template("${module_name}/haproxycfg.erb"),
   }
 
