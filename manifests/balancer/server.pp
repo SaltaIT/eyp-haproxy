@@ -5,6 +5,8 @@ define haproxy::balancer::server(
                                   $check         = true,
                                   $backup        = false,
                                 ) {
+  include ::haproxy
+  
   concat::fragment{ "balancer-server: ${balancer_name}":
     target  => '/etc/haproxy/haproxy.cfg',
     order   => "99-${balancer_name}-9",

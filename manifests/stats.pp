@@ -6,7 +6,7 @@ define haproxy::stats (
                         $realm        = 'stats',
                         $stats_uri    = '/',
                       ) {
-  include ::haproxycfg
+  include ::haproxy
 
   concat::fragment{ "stats: ${stats_name} ${listen} ${stats_uri}":
     target  => '/etc/haproxy/haproxy.cfg',
