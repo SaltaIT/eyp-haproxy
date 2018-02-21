@@ -1,5 +1,26 @@
 class haproxy::config inherits haproxy {
 
+  if(defined(Class['::selinux']))
+  {
+    $current_selinux_mode = $::selinux? {
+      bool2boolstr(false) => 'disabled',
+      false               => 'disabled',
+      default             => $::selinux_current_mode,
+    }
+
+    case $current_selinux_mode
+    {
+      /^(enforcing|permissive)$/:
+      {
+        selinux::setbool { 'haproxy_connect_any':
+          value => $haproxy::selinux_haproxy_connect_any,
+        }
+      }
+      'disabled': { }
+      default: { fail('this should not happen') }
+    }
+  }
+
   # TODO: load multiple configuration files using the -f flag, for example:
   #       haproxy -f conf/http-defaults -f conf/http-listeners ...
 
