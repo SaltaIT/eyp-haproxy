@@ -1,3 +1,5 @@
+include ::selinux
+
 class { 'haproxy': }
 
 haproxy::stats { ':2222':
