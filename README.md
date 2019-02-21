@@ -17,19 +17,11 @@
 
 ## Overview
 
-A one-maybe-two sentence summary of what the module does/what problem it solves.
-This is your 30 second elevator pitch for your module. Consider including
-OS/Puppet version it works with.
+HAproxy configutation management
 
 ## Module Description
 
-If applicable, this section should have a brief description of the technology
-the module integrates with and what that integration enables. This section
-should answer the questions: "What does this module *do*?" and "Why would I use
-it?"
-
-If your module has a range of functionality (installation, configuration,
-management, etc.) this is the time to mention it.
+HAproxy setup and configuration management. SELinux support via **eyp-selinux**
 
 ## Setup
 
@@ -46,11 +38,28 @@ This module requires pluginsync enabled
 
 ### Beginning with haproxy
 
-The very basic steps needed for a user to get the module up and running.
+Basic setup with stats listening to :2222 and a balancer listening to :3333:
 
-If your most recent release breaks compatibility or requires particular steps
-for upgrading, you may wish to include an additional section here: Upgrading
-(For an example, see http://forge.puppetlabs.com/puppetlabs/firewall).
+```
+class { 'haproxy': }
+
+haproxy::stats { ':2222':
+}
+
+haproxy::balancer { 'demo':
+  listen => ':3333'
+}
+
+haproxy::balancer::server { 'demo1':
+  balancer_name  => 'demo',
+  server_address => '127.0.0.1:2222',
+}
+
+haproxy::balancer::server { 'demo2':
+  balancer_name  => 'demo',
+  server_address => '127.0.0.1:2222',
+}
+```
 
 ## Usage
 
