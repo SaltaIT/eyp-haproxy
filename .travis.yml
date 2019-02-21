@@ -43,3 +43,8 @@ matrix:
     dist: trusty
     bundler_args:
     script: sudo service docker restart ; sleep 10 && bundle exec rspec spec/acceptance/mod*_spec.rb
+  - rvm: default
+    env: BEAKER_set="ubuntu18-docker" TEST=mod
+    dist: trusty
+    bundler_args:
+    script: sudo service docker restart ; sleep 10 && bundle exec rspec spec/acceptance/mod*_spec.rb
