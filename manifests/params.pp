@@ -29,6 +29,9 @@ class haproxy::params {
             /^16.*$/:
             {
             }
+            /^18.*$/:
+            {
+            }
             default: { fail("Unsupported Ubuntu version! - ${::operatingsystemrelease}")  }
           }
         }

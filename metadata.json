@@ -1,8 +1,8 @@
 {
   "name": "eyp-haproxy",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "eyp",
-  "summary": "HAproxy management",
+  "summary": "HAproxy: setup and configutation management",
   "license": "Apache-2.0",
   "source": "https://github.com/NTTCom-MS/eyp-haproxy",
   "project_page": "https://github.com/NTTCom-MS/eyp-haproxy",
@@ -34,7 +34,11 @@
     {
       "operatingsystem": "OracleLinux",
       "operatingsystemrelease": [ "6", "7" ]
-    }
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [ "14.04", "16.04", "18.04" ]
+    },
   ],
   "requirements": [
     {
