@@ -8,7 +8,7 @@ haproxy::balancer { 'http':
 }
 
 haproxy::balancer { 'https':
-  listen => ':80'
+  listen => ':443'
 }
 
 haproxy::balancer::server { 'mailcow_http':
