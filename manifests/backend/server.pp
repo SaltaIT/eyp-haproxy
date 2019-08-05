@@ -1,4 +1,4 @@
-define haproxy::balancer::server(
+define haproxy::backend::server(
                                   $server_address,
                                   $backend_name,
                                   $server_name   = $name,
