@@ -1,0 +1,18 @@
+
+<% if defined?(@description) -%>
+#---------------------------------------------------------------------
+# <%= @description %>
+#---------------------------------------------------------------------
+<% end -%>
+frontend <%= @frontend_name %>
+  bind <%= @bind %>
+  mode <%= @mode %>
+  <%- if @tcplog -%>
+  option tcplog
+  <%- end -%>
+  <%- if defined?(@tcp_request_inspect_delay) -%>
+  tcp-request inspect-delay <%= @tcp_request_inspect_delay %>
+  <%- end -%>
+  <%- if defined?(@tcp_request_content_action_and_condition) -%>
+  tcp-request content <%= @tcp_request_content_action_and_condition %>
+  <%- end -%>
