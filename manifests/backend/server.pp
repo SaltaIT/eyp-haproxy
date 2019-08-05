@@ -8,7 +8,7 @@ define haproxy::backend::server(
                                 ) {
   include ::haproxy
 
-  concat::fragment{ "backend-server: ${balancer_name} ${server_name}":
+  concat::fragment{ "backend-server: ${backend_name} ${server_name}":
     target  => '/etc/haproxy/haproxy.cfg',
     order   => "98-${backend_name}-9-${order}",
     content => template("${module_name}/backend/server.erb"),
