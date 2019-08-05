@@ -30,6 +30,10 @@ haproxy::frontend { 'https':
   tcp_request_content_action_and_condition => 'accept if { req_ssl_hello_type 1 }',
 }
 
+haproxy::frontend::usebackend { 'mailcow_https':
+  condition => 'if { req.ssl_sni -m end tachi.systemadmin.es }',
+}
+
 #
 # backend bk_app1
 #   balance source

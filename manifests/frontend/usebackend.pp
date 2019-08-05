@@ -1,11 +1,11 @@
 # use_backend bk_app3 if { req.ssl_sni -m end app3.domain.com }
 # use_backend <backend> [{if | unless} <condition>]
 define haproxy::frontend::usebackend(
-                                  $frontend_name,
-                                  $condition,
-                                  $backend_name  = $name,
-                                  $order         = '00',
-                                ) {
+                                      $frontend_name,
+                                      $condition,
+                                      $backend_name  = $name,
+                                      $order         = '00',
+                                    ) {
   include ::haproxy
 
   concat::fragment{ "frontend-usebackend: ${balancer_name} ${server_name}":
