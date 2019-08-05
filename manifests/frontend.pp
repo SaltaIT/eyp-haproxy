@@ -8,6 +8,14 @@
 #   use_backend bk_app2 if { req.ssl_sni -m end app2.domain.com }
 #   use_backend bk_app3 if { req.ssl_sni -m end app3.domain.com }
 
+# mode    http
+# option  httplog
+# option  dontlognull
+# option forwardfor
+# option http-server-close
+
+# option forwardfor [ except <network> ] [  <name> ] [ if-none ]
+
 define haproxy::frontend(
                           $bind,
                           $frontend_name                            = $name,
@@ -16,6 +24,14 @@ define haproxy::frontend(
                           $tcplog                                   = false,
                           $tcp_request_inspect_delay                = undef,
                           $tcp_request_content_action_and_condition = undef,
+                          $dontlognull                              = undef,
+                          $forwardfor                               = false,
+                          $forwardfor_except                        = undef,
+                          $forwardfor_header                        = undef,
+                          $forwardfor_ifnone                        = false,
+                          $http_server_close                        = undef,
+                          $httplog                                  = false,
+                          $httplog_clf                              = false,
                         ) {
   include ::haproxy
 
