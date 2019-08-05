@@ -31,7 +31,8 @@ haproxy::frontend { 'https':
 }
 
 haproxy::frontend::usebackend { 'mailcow_https':
-  condition => 'if { req.ssl_sni -m end tachi.systemadmin.es }',
+  frontend_name => 'https',
+  condition     => 'if { req.ssl_sni -m end tachi.systemadmin.es }',
 }
 
 #
