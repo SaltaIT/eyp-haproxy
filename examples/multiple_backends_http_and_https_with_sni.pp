@@ -1,6 +1,8 @@
 class { 'haproxy': }
 
 haproxy::stats { ':2222':
+  show_node => true,
+  password  => 'password',
 }
 
 haproxy::balancer { 'http':
