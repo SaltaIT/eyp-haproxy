@@ -3,6 +3,7 @@ define haproxy::balancer(
                           $balancer_name = $name,
                           $mode          = 'tcp',
                           $balance_mode  = 'roundrobin',
+                          $description   = undef,
                         ) {
   include ::haproxy
 

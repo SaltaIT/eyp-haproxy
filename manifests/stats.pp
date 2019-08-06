@@ -5,6 +5,10 @@ define haproxy::stats (
                         $hide_version = true,
                         $realm        = 'stats',
                         $stats_uri    = '/',
+                        $show_node    = false,
+                        $refresh      = undef,
+                        $username     = 'admin',
+                        $password     = undef,
                       ) {
   include ::haproxy
 
