@@ -23,7 +23,7 @@ haproxy::balancer::server { 'mailcow_http':
 #   use_backend bk_app3 if { req.ssl_sni -m end app3.domain.com }
 
 haproxy::frontend { 'https':
-  bind                                     => '*:443',
+  bind                                     => '127.0.0.1:9443',
   mode                                     => 'tcp',
   tcplog                                   => true,
   tcp_request_inspect_delay                => '10s',
