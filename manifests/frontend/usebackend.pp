@@ -8,7 +8,7 @@ define haproxy::frontend::usebackend(
                                     ) {
   include ::haproxy
 
-  concat::fragment{ "frontend-usebackend: ${balancer_name} ${server_name}":
+  concat::fragment{ "frontend-usebackend: ${backend_name} ${frontend_name}":
     target  => '/etc/haproxy/haproxy.cfg',
     order   => "97-${frontend_name}-9-${order}",
     content => template("${module_name}/frontend/usebackend.erb"),
