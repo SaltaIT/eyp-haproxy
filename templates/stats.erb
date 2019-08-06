@@ -12,3 +12,12 @@ listen <%= @stats_name %> <%= @listen %>
   <%- end -%>
   stats realm <%= @realm %>
   stats uri <%= @stats_uri %>
+  <%- if defined?(@refresh) -%>
+  stats refresh <%= @refresh %>
+  <%- end -%>
+  <%- if @show_node -%>
+  stats show-node
+  <%- end -%>
+  <%- if defined?(@password) -%>
+  stats auth <%= @username %>:<%= @password %>
+  <%- end -%>
