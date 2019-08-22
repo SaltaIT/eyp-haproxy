@@ -8,9 +8,9 @@ define haproxy::frontend::server(
                                 ) {
   include ::haproxy
 
-  concat::fragment{ "frontend-server: ${balancer_name} ${server_name}":
+  concat::fragment{ "frontend-server: ${frontend_name} ${server_name}":
     target  => '/etc/haproxy/haproxy.cfg',
-    order   => "99-${balancer_name}-9-${order}",
+    order   => "99-${frontend_name}-9-${order}",
     content => template("${module_name}/frontend/server.erb"),
   }
 }

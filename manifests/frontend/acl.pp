@@ -10,7 +10,7 @@ define haproxy::frontend::acl (
 
   concat::fragment{ "frontend-acl: ${acl_name} ${frontend_name}":
     target  => '/etc/haproxy/haproxy.cfg',
-    order   => "97-${frontend_name}-8-${order}",
+    order   => "97-${frontend_name}-2-${order}",
     content => template("${module_name}/frontend/acl.erb"),
   }
 }
