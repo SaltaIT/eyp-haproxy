@@ -16,6 +16,17 @@
 
 # option forwardfor [ except <network> ] [  <name> ] [ if-none ]
 
+# TODO:
+# frontend http_proxy
+#   bind 192.168.0.1:80
+#   acl is_foo hdr_dom(host) -i foo
+#   acl is_bar hdr_dom(host) -i bar
+#   use_backend cluster1 if is_foo
+#   use backend cluster2 if is_barbackend cluster1
+#   server server1 192.168.0.2:80
+#   server server2 192.168.0.3:80backend cluster2
+#   server server3 192.168.0.4:80
+
 define haproxy::frontend(
                           $bind,
                           $frontend_name                            = $name,
