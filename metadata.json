@@ -1,6 +1,6 @@
 {
   "name": "eyp-haproxy",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "author": "eyp",
   "summary": "HAproxy: setup and configutation management",
   "license": "Apache-2.0",

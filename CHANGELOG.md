@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.2.0
+
+* Rework HAProxy rule definition
+
 ## 0.1.2
 
 * Updated metadata for **eyp-systemd 0.2.0**
