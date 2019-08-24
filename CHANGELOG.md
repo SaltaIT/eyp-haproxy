@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.2.1
+
+* added **haproxy::backend::addheader**
+
 ## 0.2.0
 
 * Rework HAProxy rule definition
