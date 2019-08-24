@@ -10,7 +10,7 @@ define haproxy::backend::addheader (
                                 ) {
   include ::haproxy
 
-  concat::fragment{ "backend-addheader: ${backend_name} ${header} ${name}":
+  concat::fragment{ "backend-addheader: ${backend_name} ${header_name} ${name}":
     target  => '/etc/haproxy/haproxy.cfg',
     order   => "98-${backend_name}-8-${order}",
     content => template("${module_name}/backend/addheader.erb"),
