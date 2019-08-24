@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.2.2
+
+* bugfix **haproxy::frontend::usebackend**
+
 ## 0.2.1
 
 * added **haproxy::backend::addheader**
