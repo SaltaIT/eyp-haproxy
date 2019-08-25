@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.2.4
+
+* added **haproxy::frontend::tcp_request_connection**
+
 ## 0.2.3
 
 * renamed resources for better ordering
