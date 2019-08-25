@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.2.3
+
+* renamed resources for better ordering
+
 ## 0.2.2
 
 * bugfix **haproxy::frontend::usebackend**
