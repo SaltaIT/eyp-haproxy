@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 0.2.4
+## 0.2.5
 
 * added **haproxy::frontend::tcp_request_connection**
 
