@@ -10,7 +10,7 @@ define haproxy::backend::server(
 
   concat::fragment{ "backend-server: ${backend_name} ${server_name}":
     target  => '/etc/haproxy/haproxy.cfg',
-    order   => "98-${backend_name}-9-${order}",
+    order   => "98-backend-${backend_name}-9-server-${order}",
     content => template("${module_name}/backend/server.erb"),
   }
 }

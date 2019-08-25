@@ -10,7 +10,7 @@ define haproxy::frontend::usebackend(
 
   concat::fragment{ "frontend-usebackend: ${name} ${backend_name} ${frontend_name}":
     target  => '/etc/haproxy/haproxy.cfg',
-    order   => "97-${frontend_name}-5-${order}",
+    order   => "97-frontend-${frontend_name}-5-usebackend-${order}",
     content => template("${module_name}/frontend/usebackend.erb"),
   }
 }
