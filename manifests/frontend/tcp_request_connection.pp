@@ -9,9 +9,9 @@
                                                   ) {
   include ::haproxy
 
-  concat::fragment{ "frontend-acl: ${acl_name} ${frontend_name}":
+  concat::fragment{ "frontend-acl: ${action} ${unless} ${condition} ${frontend_name}":
     target  => '/etc/haproxy/haproxy.cfg',
-    order   => "97-frontend-${frontend_name}-2-tcp-reject-${order}",
+    order   => "97-frontend-${frontend_name}-2-tcp_request_connection-${order}",
     content => template("${module_name}/frontend/tcp_request_connection.erb"),
   }
 }

@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.2.6
+
+* added **haproxy::backend::http_response_set_header**
+
 ## 0.2.5
 
 * added **haproxy::frontend::tcp_request_connection**
