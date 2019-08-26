@@ -9,9 +9,9 @@ define haproxy::backend::http_response_set_header (
                                                   ) {
   include ::haproxy
 
-  concat::fragment{ "frontend-acl: ${acl_name} ${frontend_name}":
+  concat::fragment{ "backend - http_response_set_header: ${name} ${header_name} ${header_value} ${frontend_name}":
     target  => '/etc/haproxy/haproxy.cfg',
-    order   => "97-frontend-${frontend_name}-2-http_response_set_header-${order}",
-    content => template("${module_name}/frontend/http_response_set_header.erb"),
+    order   => "97-backend-${frontend_name}-2-http_response_set_header-${order}",
+    content => template("${module_name}/backend/http_response_set_header.erb"),
   }
 }
