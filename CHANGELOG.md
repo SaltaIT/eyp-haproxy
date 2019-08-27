@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.2.8
+
+* added support for backend ACLs
+
 ## 0.2.7
 
 * improved http-request and http-response ACL support for **haproxy::backend**
