@@ -6,6 +6,7 @@ define haproxy::backend::http_response_set_header (
                                                     $header_name = $name,
                                                     $unless      = false,
                                                     $order       = '00',
+                                                    $description = undef,
                                                   ) {
   include ::haproxy
 
