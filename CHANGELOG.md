@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 0.2.8
+## 0.2.9
 
 * added support for backend ACLs
 
