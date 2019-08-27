@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.2.7
+
+* improved http-request and http-response ACL support for **haproxy::backend**
+
 ## 0.2.6
 
 * added **haproxy::backend::http_response_set_header**
