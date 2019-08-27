@@ -48,7 +48,7 @@ define haproxy::frontend(
 
   concat::fragment{ "balancer: ${frontend_name}":
     target  => '/etc/haproxy/haproxy.cfg',
-    order   => "97-${frontend_name}-0",
+    order   => "97-frontend-${frontend_name}-0",
     content => template("${module_name}/frontend.erb"),
   }
 }

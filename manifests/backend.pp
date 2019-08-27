@@ -14,7 +14,7 @@ define haproxy::backend(
 
   concat::fragment{ "backend: ${backend_name}":
     target  => '/etc/haproxy/haproxy.cfg',
-    order   => "98-${backend_name}-0",
+    order   => "98-backend-${backend_name}-0",
     content => template("${module_name}/backend.erb"),
   }
 }

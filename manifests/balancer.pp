@@ -9,7 +9,7 @@ define haproxy::balancer(
 
   concat::fragment{ "balancer: ${balancer_name}":
     target  => '/etc/haproxy/haproxy.cfg',
-    order   => "99-${balancer_name}-0",
+    order   => "99-balancer-${balancer_name}-0",
     content => template("${module_name}/balancer.erb"),
   }
 }
