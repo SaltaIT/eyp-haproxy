@@ -5,9 +5,9 @@ global
   <%- if @chroot.to_s.empty? %>
   chroot <%= @chroot %>
   <%- end %>
-  <%- if @stats_socket.to_s.empty? %>
-  stats socket <%= @stats_socket %> mode <%= @stats_socket_mode %> level admin
-  stats timeout 30s
+  <%- if defined?(@stats_socket) %>
+  stats socket <%= @stats_socket %> mode <%= @stats_socket_mode %> level <%= @stats_socket_level %>
+  stats timeout <%= @stats_socket_timeout %>
   <%- end -%>
   user <%= @user %>
   group <%= @group %>

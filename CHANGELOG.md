@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.2.10
+
+* fixed bug on setting up admin socket
+* added flag to set socket access level and socket timeout
+
 ## 0.2.9
 
 * added support for backend ACLs
