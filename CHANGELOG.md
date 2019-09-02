@@ -2,7 +2,8 @@
 
 ## 0.2.10
 
-* added flag to set socket access level
+* fixed bug on setting up admin socket
+* added flag to set socket access level and socket timeout
 
 ## 0.2.9
 
