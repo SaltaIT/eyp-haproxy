@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.2.10
+
+* added flag to set socket access level
+
 ## 0.2.9
 
 * added support for backend ACLs

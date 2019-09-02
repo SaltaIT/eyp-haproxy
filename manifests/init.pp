@@ -8,6 +8,7 @@ class haproxy(
                             $chroot                      = '/var/lib/haproxy',
                             $stats_socket                = '/run/haproxy/admin.sock',
                             $stats_socket_mode           = '660',
+                            $stats_socket_level          = 'admin',
                             $user                        = 'haproxy',
                             $group                       = 'haproxy',
                             $daemon                      = true,
