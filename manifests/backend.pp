@@ -9,7 +9,6 @@ define haproxy::backend(
                           $mode          = 'tcp',
                           $balance_mode  = 'source',
                           $ssl_hello_chk = false,
-                          $description   = undef,
                         ) {
   include ::haproxy
 

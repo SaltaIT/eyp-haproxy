@@ -10,6 +10,6 @@ backend <%= @backend_name %>
   <%- if @ssl_hello_chk -%>
   option ssl-hello-chk
   <%- end -%>
-  <%- if @description -%>
+  <%- if defined?(@description) -%>
   description <%= @description %>
   <%- end -%>
