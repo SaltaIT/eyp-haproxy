@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.2.14
+
+* bugfix
+
 ## 0.2.13
 
 * added description option to backend and frontend

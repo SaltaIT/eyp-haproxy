@@ -44,7 +44,6 @@ define haproxy::frontend(
                           $httplog                                  = false,
                           $httplog_clf                              = false,
                           $default_backend                          = undef,
-                          $description                              = undef,
                         ) {
   include ::haproxy
 
