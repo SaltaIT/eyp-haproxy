@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.2.12
+
+* added default_backend for **haproxy::frontend**
+
 ## 0.2.11
 
 * added haproxy config test before restarting service
