@@ -43,6 +43,7 @@ define haproxy::frontend(
                           $http_server_close                        = undef,
                           $httplog                                  = false,
                           $httplog_clf                              = false,
+                          $default_backend                          = undef,
                         ) {
   include ::haproxy
 

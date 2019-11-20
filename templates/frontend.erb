@@ -28,3 +28,6 @@ frontend <%= @frontend_name %>
   <%- if defined?(@http_server_close) -%>
   <% if @http_server_close == false %>no <% end %>option http-server-close
   <%- end -%>
+  <%- if defined?(@default_backend) -%>
+  default_backend <%= @default_backend %>
+  <%- end -%>
