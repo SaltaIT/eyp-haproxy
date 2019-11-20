@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.2.11
+
+* added haproxy config test before restarting service
+
 ## 0.2.10
 
 * fixed bug on setting up admin socket
