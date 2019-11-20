@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.2.13
+
+* added description option to backend and frontend
+
 ## 0.2.12
 
 * added default_backend for **haproxy::frontend**
