@@ -1,7 +1,7 @@
 {
   "name": "eyp-haproxy",
   "version": "0.2.14",
-  "author": "eyp",
+  "author": "Jordi Prats",
   "summary": "HAproxy: setup and configutation management",
   "license": "Apache-2.0",
   "source": "https://github.com/SaltaIT/eyp-haproxy",
